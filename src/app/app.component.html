@@ -1,4 +1,8 @@
+<div [@openClose]="isOpen? 'open' : 'close'"  class="open-close-container">
 <hello name="{{ name }}"></hello>
 <p>
   Start editing to see some magic happen :)
+  {{isOpen}}
 </p>
+</div>
+<button (click)="togle()">{{isOpen? 'Open' : 'Close'}}</button>

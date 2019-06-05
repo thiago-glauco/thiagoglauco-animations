@@ -14,18 +14,23 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       })
       ),
       state('close', style({
-        height: '100px',
+        height: '150px',
         opacity: 0.5,
         backgroundColor: 'green'
       })),
-      transition('open => closed', [
-        animate('1s')
-      ]),
-      transition('closed => open', [
-        animate('0.5s')
-      ]),
+      transition('open => close', 
+        animate('0.5s ease-in-out')
+      ),
+      transition('close => open', 
+        animate('0.5s  ease-in-out')
+      ),
   ])]
 })
 export class AppComponent  {
   name = 'Angular';
+  isOpen = true;
+
+  togle() {
+    this.isOpen = !this.isOpen;
+  }
 }
